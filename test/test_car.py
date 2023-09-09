@@ -1,8 +1,6 @@
 import unittest
 from datetime import datetime
 
-from battery.nubbin_battery import NubbinBattery
-from battery.spindler_battery import SpindlerBattery
 from engine.capulet_engine import CapuletEngine
 from engine.sternman_engine import SternmanEngine
 from engine.willoughby_engine import WilloughbyEngine
@@ -23,6 +21,7 @@ class TestCapulet(unittest.TestCase):
         car = CapuletEngine(current_mileage, last_service_mileage)
         self.assertFalse(car.needs_service())
 
+
 class TestSternman(unittest.TestCase):
     def test_car_needs_serviced(self):
         warning_light_is_on = True
@@ -35,6 +34,7 @@ class TestSternman(unittest.TestCase):
 
         car = SternmanEngine(warning_light_is_on)
         self.assertFalse(car.needs_service())
+
 
 class TestWilloughby(unittest.TestCase):
     def test_car_needs_serviced(self):
